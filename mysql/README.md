@@ -1,6 +1,7 @@
 # MySQL
 
 - [MySQL Workbench](#mysql-workbench)
+- [MySQL Reference Manual](./mysql-reference-manual)
 
 ## MySQL Workbench
 
