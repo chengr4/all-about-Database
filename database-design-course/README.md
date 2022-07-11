@@ -1,16 +1,24 @@
 # Notes
 
-## Terms
+| Terms| Description |
+| ---- | ----------- |
+| Entity | eg student |
+| Attribute | eg student name, address |
 
 ## Relationships
 
 Break big table to smaller tables and make relationships
 
+### One to One
 
+### One to Many
+
+### Many to Many
 
 ## Finished Topics
 
-- [ ] Relationships
+- [x] Relationships
+- [ ] One to One Relationships
 
 ## References
 
