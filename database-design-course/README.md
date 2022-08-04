@@ -50,6 +50,30 @@ erDiagram
 
 E.g class and student
 
+## Indices
+
+An index is a data structure that you build and assign on top of existing table
+and analyze it and summerize it so that it can create a shortcut
+
+- b-tree, and ???-tree
+
+> The B-tree generalizes(概括) the binary search tree, allowing for nodes with more than two children.
+
+```sql
+create index employees_name on employees(name);
+```
+
+- Clustered:
+- Non-clustered: 
+
+> We can only choose one of these two
+
+### Clustered
+
+### Non-clustered
+
+### 
+
 ## Finished Topics
 
 ### Database Design Course
@@ -58,6 +82,7 @@ E.g class and student
 - [x] One to One Relationships + Design
 - [x] One to Many Relationships
 - [x] Many yo Many Relationships
+- [ ] Indices
 
 ## References
 
