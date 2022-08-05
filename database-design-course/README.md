@@ -7,9 +7,14 @@
 
 ## Relationships
 
-Break big table to smaller tables and make relationships
+- Break big table to smaller tables and make relationships
+- To know relationship between parent table and child table are important
+    - primary key goes on parent and foreign key goes on child
+
 
 ### One to One
+
+> Bi-direction that target table and current table point to each other
 
 E.g husband and wife, Soical Security number (SSN) and American
 
@@ -37,9 +42,11 @@ erDiagram
 
 Therefore, the way to store 1:1 relationship is
   1. attrible within the table
-  2. another table (can use foreign to connect them)
+  2. another table (can use foreign key to connect them)
 
 ### One to Many
+
+> One direction to point target table from current table
 
 ```mermaid
 erDiagram
@@ -49,6 +56,14 @@ erDiagram
 ### Many to Many
 
 E.g class and student
+
+- Need an inter-mediary table (junction table)
+
+```mermaid
+erDiagram
+  CLASS ||--|{ classStudent: junction
+  Student ||--|{ classStudent: junction
+```
 
 ## Indices
 
@@ -80,8 +95,8 @@ create index employees_name on employees(name);
 
 - [x] Relationships
 - [x] One to One Relationships + Design
-- [x] One to Many Relationships
-- [x] Many yo Many Relationships
+- [x] One to Many Relationships + Design
+- [x] Many yo Many Relationships + Design
 - [ ] Indices
 
 ## References
