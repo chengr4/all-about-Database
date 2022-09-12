@@ -17,6 +17,15 @@ SELECT * FROM <table_name> INNER JOIN <table_name> ON <col> = <col>
 
 - See all left table but only see matching right table
 
+```sql
+-- eg mysql
+SELECT * FROM <table_name> LEFT JOIN <table_name> ON <col> = <col>
+```
+
+### FULL OUTER JOIN
+
+Show all matching records
+
 ## Cheat Sheet
 
 ## DB Design Tool
