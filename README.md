@@ -9,6 +9,7 @@
 - 交集
 
 ```sql
+-- eg mysql
 SELECT * FROM <table_name> INNER JOIN <table_name> ON <col> = <col>
 ```
 
