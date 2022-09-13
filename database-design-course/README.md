@@ -67,7 +67,15 @@ erDiagram
 
 ## Keys
 
+### Primary Key
 
+- automatic UNQUE and not null
+
+### Foreign Key
+
+- Foreign key references UNIQUE eg. primary key 
+- Every single value in the column has to a value that exists in whatever column or referenceing
+- 
 
 ## Indices
 
