@@ -12,3 +12,67 @@
 ### Data Export and Import
 
 #### SQL Data Export and Import Wizard
+
+## Locking
+
+當不同 transaction 操作同一行 record 時，為了保證一致性，需要對記錄加鎖
+
+### Internal Locking Methods
+
+locks has two levels (table, row) and two types (shared, exclusive)
+
+- Table-level locks: 
+  - When different transactions lock the table, the later one will be blocked until table lock is released
+  - Pros: 佔用較少 resource, prevent dead lock
+  - Cons: not good for high concurrency
+- Row-level locks
+  - Pros: better for high concurrency
+  - Cons: dead lock, 佔用較多 resource
+  
+> See more at https://dev.mysql.com/doc/refman/5.7/en/internal-locking.html
+
+Shared lock
+
+```mysql
+# before mysql 8.0
+select * from user where id = 1 lock in share mode;
+  
+# after mysql 8.0
+select * from user where id = 1 for share
+```
+
+Exclusive lock
+
+```mysql
+# 通过 for update 可以给数据行加 exclusive lock
+select * from user where id = 1 for update;
+  
+# 通过 update 或 delet e同样也可以
+update user set age = 16 where id = 1;
+```
+
+#### InnoDB Locking
+
+```mysql
+show engine innodb status;
+```
+
+- Intention Locks
+- Record Locks
+  ```mysql
+  select * from user where id = 1 for update;
+  ```
+  - Only works on `index`
+- Gap Locks: 可以避免幻讀
+  ```mysql
+  select * from user where age between 22 and 26 for update;
+  ```
+- Next-Key Locks: 給 index 間加鎖
+- Insert Intention Locks
+- AUTO-INC Locks: 當主鍵設置為 `auto_increment` 時，往表中插入數據需要先獲得 `AUTO-INC Locks` 以安全的增加 `id` 的值。
+
+### Exernal Locking
+
+## References
+
+1. [Bigbyto; 理解Mysql InnoDB引擎中的锁 (2021.7)](https://wiyi.org/mysql-innodb-locking.html)
