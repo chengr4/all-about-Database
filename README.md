@@ -30,6 +30,12 @@ SELECT * FROM <table_name> LEFT JOIN <table_name> ON <col> = <col>
 
 Show all matching records
 
+## Index
+
+- Every index has its own B+ tree
+  > See [B+ tree](https://github.com/chengr4/my-data-structures/blob/main/tree/README.md#b-tree)
+- 每次新增、更新資料時，都會異動到所使用的 b+ tree => 當使用的 index 越多，需要維護的 index 也越多 => 若建立太多 index ，可能會降低新增或者更新的效率
+
 ## Cheat Sheet
 
 ## DB Design Tool
