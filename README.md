@@ -42,6 +42,10 @@ Q: What is "transaction"?
 
 A: A SQL transaction is a grouping of one or more SQL statements that interact with a database.
 
+Q: When to use index?
+
+A: 取決於使用者的使用情況。觀察哪種 queries 最頻繁最吃 resource ，再考慮值不值得創建索引
+
 ## Cheat Sheet
 
 ## DB Design Tool

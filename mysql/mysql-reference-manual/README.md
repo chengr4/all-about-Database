@@ -2,6 +2,7 @@
 
 - [Pattern Matching](#pattern-matching)
 - [JSON Functions](#json-functions)
+- [Index](./index/)
 
 ## Pattern Matching
 
