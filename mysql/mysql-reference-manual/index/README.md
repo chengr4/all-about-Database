@@ -14,6 +14,8 @@ eg
 CREATE UNIQUE INDEX ssn on students (ssn);
 ```
 
-## References
+## Finished
 
-- [8.3.1 How MySQL Uses Indexes](https://dev.mysql.com/doc/refman/8.0/en/mysql-indexes.html)
+- [ ] [8.3.1 How MySQL Uses Indexes](https://dev.mysql.com/doc/refman/8.0/en/mysql-indexes.html)
+
+## References
