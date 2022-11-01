@@ -3,6 +3,31 @@
 - [MySQL Workbench](./mysql-workbench/)
 - [MySQL Reference Manual](./mysql-reference-manual)
 
+---
+
+- [Locking](#locking)
+- [Architecture](#architecture)
+
+## Architecture
+
+![Architecture of MySQL](https://media.geeksforgeeks.org/wp-content/uploads/20210211183907/MySQLArchi.png)
+
+- Handler: Connections, 權限管理
+- Server
+  - SQL Parser: 它會將你所下達的 sql 指令，依據規則，轉化成抽象語法樹(Abstract Syntax Tree，AST)
+  - Optimizer: Optimize AST from Parser
+  - SQL Cache: for each search, see cache before parser and optimizer
+- Engine: InnoDB (> version 5.6)
+
+> To optimize MySQL performance, usually works on **Engine** and **Optimizer**
+
+### Handler
+
+### Server
+
+
+
+
 ## Locking
 
 當不同 transaction 操作同一行 record 時，為了保證一致性，需要對記錄加鎖
