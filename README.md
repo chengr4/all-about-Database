@@ -37,6 +37,22 @@ Show all matching records
 - 每次新增、更新資料時，都會異動到所使用的 b+ tree => 當使用的 index 越多，需要維護的 index 也越多 => 若建立太多 index ，可能會降低新增或者更新的效率
 - Use `EXPLAIN` => Eg. `EXPLAIN SELECT * FROM user_no WHERE name = 'mark';`
 
+## Union
+
+- Columns to take from queries should be the same
+- 
+
+```sql
+-- eg mysql
+
+```
+
+
+### When to Use?
+
+- Take same cols from two tables with one single query
+- MySQL automtically remove duplicate entries => so use `UNION ALL` if you need duplicates
+
 ## Q/A
 
 Q: What is "transaction"?
@@ -54,3 +70,5 @@ A: 取決於使用者的使用情況。觀察哪種 queries 最頻繁最吃 reso
 - https://dbdiagram.io/home?fbclid=IwAR1aOLukZTXPT68SNAYa1j6zd1cNIQ8DXWzhh9kCsFG7UdnGQeo_y2ZnUyM
 
 ## References
+
+- [MySQL Database Tutorial - 24 - UNION (2012.01)](https://youtu.be/crj8x1PevcY)
