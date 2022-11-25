@@ -40,18 +40,19 @@ Show all matching records
 ## Union
 
 - Columns to take from queries should be the same
-- 
+- MySQL automtically remove duplicate entries => so use `UNION ALL` if you need duplicates
 
 ```sql
 -- eg mysql
-
+SELECT name, cost, bids FROM items WHERE bids > 190;
+UNION
+SELECT name, cost, bids FROM items WHERE bids > 190;
 ```
 
 
 ### When to Use?
 
 - Take same cols from two tables with one single query
-- MySQL automtically remove duplicate entries => so use `UNION ALL` if you need duplicates
 
 ## Q/A
 
