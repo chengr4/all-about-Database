@@ -4,6 +4,14 @@
 
 - https://coding.fnsne.com/posts/2022-09-14/%E8%B3%87%E6%96%99%E5%BA%AB%E7%9A%84%E5%90%8C%E6%AD%A5/?fbclid=IwAR03zwbUN7ulTrMgxGTyi9gtHKiD0bvAnBybUVtD5JCI6u1SfU300XCHc18 + google isolation level
 
+## Difficulty of DB Performance
+
+**一致性難題**
+
+- 銀行轉賬問題：
+- 投票問題：
+
+
 ## JOINS
 
 - Target: combine rows from two or more tables (based on a related column between them)
