@@ -16,6 +16,6 @@ CREATE UNIQUE INDEX ssn on students (ssn);
 
 ## Finished
 
-- [ ] [8.3.1 How MySQL Uses Indexes](https://dev.mysql.com/doc/refman/8.0/en/mysql-indexes.html)
+- [x] [8.3.1 How MySQL Uses Indexes](https://dev.mysql.com/doc/refman/8.0/en/mysql-indexes.html)
 
 ## References
