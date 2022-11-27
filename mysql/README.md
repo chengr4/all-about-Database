@@ -25,8 +25,33 @@
 
 ### Server
 
+### Engine
 
+Why InnoDB choose b+ tree for data storage?
 
+-  Binary search is the chosen one for searching data (O(logn))
+
+We need a proper data structure for "binary search"
+
+- Array (X): Needs allocating memory in advance. Creates, Deletes data can be slow
+- Linked list (X): Cannot run binary search
+
+=> BST combines the advantage of this two
+
+- BST (X): Some edge case needs O(n) searching time
+
+=> Balanced BST (eg red-black tree, AVL tree)
+
+- Balanced BST (X): Data is usually stored in driver. with Balanced BST, it may have too many I/O
+
+=> b tree: For each node has multiple data
+
+- b tree (X): not stable when searching, bad for range search
+
+=> finally we get b+ tree
+
+- b+ tree (O):
+  - only leave nodes have data and other nodes store index
 
 ## Locking
 
