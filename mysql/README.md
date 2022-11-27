@@ -5,8 +5,9 @@
 
 ---
 
-- [Locking](#locking)
 - [Architecture](#architecture)
+- [Design Table](#design-table)
+- [Locking](#locking)
 
 ## Architecture
 
@@ -52,6 +53,41 @@ We need a proper data structure for "binary search"
 
 - b+ tree (O):
   - only leave nodes have data and other nodes store index
+
+## Design Table
+
+1. Pick proper data type
+  - Four string types: `char`, `varchar`, `text`, `blob`
+  - Three date types: `datetime (YYYY-MM-DD HH:MM:SS)` (8 bytes), `timestamp` (4 bytes), `unsigned int` (4 bytes)
+
+
+### `char` vs `varchar`
+
+- `char`
+  - max 255 bytes
+  - fixed space: `char(4)` is 4 bytes, even if you store only 1 byte
+  - `char` 需要處理空白
+  - - For fixed, update frequently, shot
+- `varchar`
+  - To save `n` character needs `n+1` bytes
+  - max 65535 bytes, but real max is 65532 bytes
+  - if strings are big enough, it changes to `text` aotomatically
+  - For dynamic, not update frequently, long
+
+| value      | char(4) | storage required | varchar(4) | storage required |
+| ---------- | ------- | ---------------- | ---------- | ---------------- |
+| ''         | '    '  | 4 bytes          | ''         | 1 bytes          |
+| 'ab'       | 'ab  '  | 4 bytes          | 'ab'       | 3 bytes          |
+| 'abcd'     | 'abcd'  | 4 bytes          | 'abcd'     | 5 bytes          |
+| 'abcdefgh' | 'abcd'  | 4 bytes          | 'abcd'     | 5 bytes          |
+
+
+### `text` vs `blob`
+
+- text: 0-65536 bytes, string
+- blob: 0-65536 bytes, binary
+- Had better not use both of them => they need other spaces to save data, instead of in b+ tree
+
 
 ## Locking
 
