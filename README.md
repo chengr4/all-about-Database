@@ -84,3 +84,4 @@ A: 取決於使用者的使用情況。觀察哪種 queries 最頻繁最吃 reso
 ## References
 
 - [MySQL Database Tutorial - 24 - UNION (2012.01)](https://youtu.be/crj8x1PevcY)
+- [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)
