@@ -29,6 +29,8 @@ SELECT * FROM <table_name> INNER JOIN <table_name> ON <col> = <col>
 
 - See all left table but only see matching right table
 
+> The `LEFT JOIN` keyword returns all records from the left table, even if there are no matches in the right table.
+
 ```sql
 -- eg mysql
 SELECT * FROM <table_name> LEFT JOIN <table_name> ON <col> = <col>
