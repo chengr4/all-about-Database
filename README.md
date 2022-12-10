@@ -26,6 +26,8 @@ flowchart TD
   idPb --> id2
   idPb --> id3
   idPb --> id4
+  id1 -->|solution| lock
+  id2 -->|solution| MVCC 
 ```
 
 
