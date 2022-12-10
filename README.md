@@ -11,6 +11,23 @@
 - 銀行轉賬問題：
 - 投票問題：
 
+---
+
+並行所產生的不一致性難題
+
+```mermaid
+flowchart TD
+  idPb("By concurrency")
+  id1("Inconsist update")
+  id2("Dirty read")
+  id3("Unrepeatable Read")
+  id4("Phantom Read")
+  idPb --> id1
+  idPb --> id2
+  idPb --> id3
+  idPb --> id4
+```
+
 
 ## JOINS
 
