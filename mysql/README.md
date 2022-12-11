@@ -67,7 +67,7 @@ We need a proper data structure for "binary search"
   - max 255 bytes
   - fixed space: `char(4)` is 4 bytes, even if you store only 1 byte
   - `char` 需要處理空白
-  - - For fixed, update frequently, shot
+  - For fixed, update frequently, short
 - `varchar`
   - To save `n` character needs `n+1` bytes
   - max 65535 bytes, but real max is 65532 bytes
