@@ -1,5 +1,10 @@
 # All About Database
 
+
+- [JOINS](#joins)
+- [Index](#index)
+- [Q/A](#qa)
+
 ## TO READ
 
 - https://coding.fnsne.com/posts/2022-09-14/%E8%B3%87%E6%96%99%E5%BA%AB%E7%9A%84%E5%90%8C%E6%AD%A5/?fbclid=IwAR03zwbUN7ulTrMgxGTyi9gtHKiD0bvAnBybUVtD5JCI6u1SfU300XCHc18 + google isolation level
@@ -99,6 +104,11 @@ Q: What is a database driver?
 A: A database driver is a software component that enables a software application to communicate with DBMS and perform database operations. A database driver acts as an intermediary between the application and the DBMS, translating the API calls made by the application into a format that the DBMS can understand and execute.
 
 Eg. Oracle JDBC driver for Java, pq for Golang
+
+Q: How tow avoid dead lock?
+
+1. `FOR NO KEY UPDATE;`
+2. update data in a consistent order (eg small ID first)
 
 ## Cheat Sheet
 
