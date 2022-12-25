@@ -6,6 +6,7 @@
 ---
 
 - [Architecture](#architecture)
+- [Isolation levels in MySQL](#isolation-levels-in-mysql)
 - [Design Table](#design-table)
 - [Locking](#locking)
 
@@ -53,6 +54,15 @@ We need a proper data structure for "binary search"
 
 - b+ tree (O):
   - only leave nodes have data and other nodes store index
+
+## Isolation levels in MySQL
+
+|  | Read Uncommitted | Read Commited | Repeatable Read | Serializable |
+| ---------- |||||
+| Dirty Read |||||
+| Non-repeatable |||||
+| Phantom Read |||||
+| Serialization Anomaly |||||
 
 ## Design Table
 

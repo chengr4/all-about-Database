@@ -25,7 +25,7 @@ flowchart TD
   idPb("By concurrency")
   id1("Inconsist update")
   id2("Dirty read")
-  id3("Unrepeatable Read")
+  id3("Non-repeatable Read")
   id4("Phantom Read")
   idPb --> id1
   idPb --> id2
@@ -35,6 +35,10 @@ flowchart TD
   id2 -->|solution| MVCC 
 ```
 
+- Dirty Read: A transaction reads data written by other concurrent uncommitted transation
+- Non-repeatable Read: A transaction reads the same row twice and sees different value becuase it has been modified by other committed transaction
+- Phantom Read: A transaction re-executes a query to find rows that satisfy a condition and sees a different set of rows, due to changes by other commited transaction
+- Serialization Anomaly: The result of group of concurrent commited transactions is impossible to achieve if we try to run them sequentially in any order without overlapping
 
 ## JOINS
 
