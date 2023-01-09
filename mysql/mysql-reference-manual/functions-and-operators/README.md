@@ -2,7 +2,14 @@
 
 > Chapter 12
 
+- [Full-Text Search Functions](#full-text-search-functions)
 - [JSON Functions](#json-functions)
+
+## Full-Text Search Functions
+
+> 12.10
+
+- IN NATURAL LANGUAGE MODE: ignore capital
 
 ## JSON Functions
 

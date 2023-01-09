@@ -29,6 +29,8 @@ SELECT * FROM pet WHERE REGEXP_LIKE(name, '^b', 'c');
 
 GOTO [Functions and Operators](./functions-and-operators/)
 
+- Full-Text Search Functions
+  - `MATCH (col1,col2,...) AGAINST (expr [search_modifier])`
 - JSON Functions
   - `JSON_EXTRACT(json_doc, path[, path] ...)`
   - `JSON_UNQUOTE(json_val)`
