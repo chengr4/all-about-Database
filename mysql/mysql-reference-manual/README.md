@@ -1,8 +1,8 @@
 # MySQL Reference Manual
 
 - [Pattern Matching](#pattern-matching)
-- [JSON Functions](#json-functions)
 - [Index](./index/)
+- [Functions and Operators](./functions-and-operators/)
 
 ## Pattern Matching
 
