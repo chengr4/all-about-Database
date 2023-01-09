@@ -98,7 +98,6 @@ We need a proper data structure for "binary search"
 - blob: 0-65536 bytes, binary
 - Had better not use both of them => they need other spaces to save data, instead of in b+ tree
 
-
 ## Locking
 
 當不同 transaction 操作同一行 record 時，為了保證一致性，需要對記錄加鎖
@@ -158,6 +157,25 @@ show engine innodb status;
 - AUTO-INC Locks: 當主鍵設置為 `auto_increment` 時，往表中插入數據需要先獲得 `AUTO-INC Locks` 以安全的增加 `id` 的值。
 
 ### Exernal Locking
+
+## Index
+
+ - clustered Index: Main b+ tree in MySQL
+ - secondary Index: self-built b+ tree in MySQL
+
+  > by eg `ALTER TABLE table ADD INDEX age_index(age)`
+
+  includes:
+  
+  - 覆蓋索引(covering index) (default)
+  - 連合索引(compound index): 兩個欄位組合在一起，建立一個索引表
+  - 前綴索引(prefix index)
+  - 唯一索引(unique index)
+
+Basic steps to use secondary Index:
+
+1. 至 secondary Index 尋找 PK
+2. 再至 clustered Index 取得完整資料
 
 ## References
 

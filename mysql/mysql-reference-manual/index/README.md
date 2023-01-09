@@ -2,10 +2,10 @@
 
 ```mermaid
 flowchart TD
-index --> primary_key
-index --> unique_index
-index --> non-unique_index
-index --> full-text_search
+  index --> primary_key
+  index --> unique_index
+  index --> non-unique_index
+  index --> full-text_search
 ```
 
 eg
