@@ -98,6 +98,11 @@ We need a proper data structure for "binary search"
 - blob: 0-65536 bytes, binary
 - Had better not use both of them => they need other spaces to save data, instead of in b+ tree
 
+```sql
+-- search blob field
+
+```
+
 ## Locking
 
 當不同 transaction 操作同一行 record 時，為了保證一致性，需要對記錄加鎖
