@@ -5,6 +5,12 @@
 - [Full-Text Search Functions](#full-text-search-functions)
 - [JSON Functions](#json-functions)
 
+## String Functions and Operators
+
+> 12.8
+
+
+
 ## Full-Text Search Functions
 
 > 12.10

@@ -137,7 +137,7 @@ Exclusive lock
 # 通过 for update 可以给数据行加 exclusive lock
 select * from user where id = 1 for update;
   
-# 通过 update 或 delet e同样也可以
+# 通过 update 或 delete 同样也可以
 update user set age = 16 where id = 1;
 ```
 
