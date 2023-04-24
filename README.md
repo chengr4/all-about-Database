@@ -112,6 +112,12 @@ Eg. Oracle JDBC driver for Java, pq for Golang
 Q: How tow avoid dead lock?
 
 1. `FOR NO KEY UPDATE;`
+    ```sql
+    SELECT * FROM account
+    WHERE id = $1
+    LIMIT 1
+    FOR NO KEY UPDATE; <!-- Not update the key or ID of the column => Not affect foreign key of other table  -->
+    ```
 2. update data in a consistent order (eg small ID first)
 
 ## Cheat Sheet
