@@ -119,7 +119,7 @@ locks has two levels (table, row) and two types (shared, exclusive)
   - Pros: better for high concurrency
   - Cons: dead lock, 佔用較多 resource
   
-> See more at https://dev.mysql.com/doc/refman/5.7/en/internal-locking.html
+> See more: https://dev.mysql.com/doc/refman/5.7/en/internal-locking.html
 
 Shared lock
 
@@ -181,6 +181,13 @@ Basic steps to use secondary Index:
 
 1. 至 secondary Index 尋找 PK
 2. 再至 clustered Index 取得完整資料
+
+## Commands
+
+| Command | Description |
+| ------- | ----------- |
+|`select @@transaction_isolation`||
+|`set session transaction isolation level <the level>`||
 
 ## References
 
