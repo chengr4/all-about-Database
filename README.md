@@ -39,7 +39,8 @@ flowchart TD
 - Non-repeatable Read: A transaction reads the same row twice and sees different value becuase it has been modified by other committed transaction
 - Phantom Read: A transaction re-executes a query to find rows that satisfy a condition and sees a different set of rows, due to changes by other commited transaction
 - Serialization Anomaly: The result of group of concurrent commited transactions is impossible to achieve if we try to run them sequentially in any order without overlapping
-    > 例如，在個別兩個 transaction 加總會看到重複的加總而非疊加
+    > 例如，在個別兩個 transaction 加總會看到重複的加總而非疊加   
+    > `insert`, `sum()` related
 
 ## JOINS
 
