@@ -53,16 +53,7 @@ We need a proper data structure for "binary search"
 => finally we get b+ tree
 
 - b+ tree (O):
-  - only leave nodes have data and other nodes store index
-
-## Isolation levels in MySQL
-
-|  | Read Uncommitted | Read Commited | Repeatable Read | Serializable |
-| ---------- |||||
-| Dirty Read |||||
-| Non-repeatable |||||
-| Phantom Read |||||
-| Serialization Anomaly |||||
+    - only leave nodes have data and other nodes store index
 
 ## Design Table
 
@@ -106,6 +97,15 @@ We need a proper data structure for "binary search"
 ## Locking
 
 當不同 transaction 操作同一行 record 時，為了保證一致性，需要對記錄加鎖
+
+### Isolation levels in MySQL
+
+| \  | Read Uncommitted | Read Commited | Repeatable Read | Serializable |
+| --------------------- | ------------ | --------------- | -------- | -- |
+| Dirty Read            | O | X | X | X |
+| Non-repeatable        | O | O | X | X |
+| Phantom Read          | O | O | X | X |
+| Serialization Anomaly | O | O | O | X |
 
 ### Internal Locking Methods
 

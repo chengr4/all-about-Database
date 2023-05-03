@@ -7,6 +7,18 @@
 3. Run `docker ps` to check if container starts
 4. Connect to the container and use psql concole: `docker exec -it <name_of_container> psql -U <user>`
 
+## Locking
+
+### Isolation levels in Postgres
+
+| \  | Read Uncommitted | Read Commited | Repeatable Read | Serializable |
+| --------------------- | ------------ | --------------- | -------- | -- |
+| Dirty Read            | X | X | X | X |
+| Non-repeatable        | O | O | X | X |
+| Phantom Read          | O | O | X | X |
+| Serialization Anomaly | O | O | O | X |
+
+
 ## Commands
 
 | Command | Description |
