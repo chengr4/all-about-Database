@@ -9,6 +9,8 @@
 
 ## Locking
 
+Read Commited is the default isolation level in Postgres
+
 ### Isolation levels in Postgres
 
 | \  | Read Uncommitted | Read Commited | Repeatable Read | Serializable |
