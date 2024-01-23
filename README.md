@@ -2,7 +2,7 @@
 
 - [JOINS](#joins)
 - [Index](#index)
-- [Q/A](./qa/)
+- [Q/A](https://github.com/chengr4/cs-qa/tree/main/database)
 
 ## TO READ
 
