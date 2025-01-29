@@ -1,0 +1,188 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsfonts, amssymb, amsmath}
+\usepackage{fullpage}
+\usepackage{parskip} % skip a line instead of indenting
+% \usepackage{graphicx} % for inserting images
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{tikz} % for plot
+
+\newtheorem*{rem}{Remark}
+
+\title{Database Systems}
+\author{R4 Cheng}
+\date{\today}
+
+\newcommand{\Remark}[1]{
+  \begin{rem}
+    \color{cyan}
+    #1
+  \end{rem}
+}
+
+\begin{document}
+\maketitle
+
+Best practice:
+
+\begin{enumerate}
+    \item Always prepare your own key
+\end{enumerate}
+
+\Remark{Say what you want instead of how to do}
+
+Use IN/Not in to check if a value is in a set
+
+\section*{Datalog}
+
+Each query is a rule.
+
+E.g. For all values of Part, Subpart, and Qty,
+
+\textbf{if} there is a tuple \(\langle \text{Part, Subpart, Qty} \rangle\) in Assembly,
+
+\textbf{then} there must be a tuple \(\langle \text{Part, Subpart} \rangle\) in Components.
+
+\begin{verbatim}
+    Components(Part, Subpart) :- Assembly(Part, Subpart, Qty).
+\end{verbatim}
+
+E.g. For all values of Part, Part2, Subpart, and Qty,
+
+\textbf{if} there is a tuple \(\langle \text{Part, Part2, Qty} \rangle\) in Assembly, 
+\textbf{and} a tuple \(\langle \text{Part2, Subpart} \rangle\) in Components,
+
+\textbf{then} there must be a tuple \textless Part, Subpart\textgreater in Components.
+
+\begin{verbatim}
+    Components(Part, Subpart) :- Assembly(Part, Part2, Qty), 
+                               Components(Part2, Subpart).
+\end{verbatim}
+
+\Remark{Each application of a Datalog rule can be understood in terms of relational algebra}
+
+\subsection*{Unsafe rules}
+
+\begin{verbatim}
+    (Unsafe) V(x, y, z) :- Actor(x, y, 1998), z > 200
+\end{verbatim}
+
+This is unsafe because \textbf{z} is not bound to any relation, meaning it can take on infinitely many values.
+
+\begin{verbatim}
+    (Unsafe) W(x,y,z) :- Actor(x,y,z), not Plays(t,x)
+\end{verbatim}
+
+This is unsafe because The variable \textbf{t} appears only in the negated literal not Plays(t, x) and does not appear in any positive literal in the body
+
+\Remark{Every variable should appear in at least one positive body atom}
+
+\section*{Relational Algebra}
+
+\begin{itemize}
+    \item Defines a set of basic operations on relations
+    \item Each operation returns a relation
+    \item \textbf{Result} of an operation can be the input of another operation
+\end{itemize}
+
+Basic operations:
+
+\begin{itemize}
+    \item Selection ($\sigma$): Selects a subset of rows from relation.
+    \item Projection ($\pi$): Deletes attributes that are not in the projection list and deletes duplicate rows.
+    \item Union ($\cup$): Tuples in relation 1 and in relation 2.
+    \item Set-difference ($-$): Tuples in relation 1 but not in relation 2.
+    \item Cross product ($\times$): Allows us to combine two relations. it returns all possible pairs of tuples from the two relations.
+\end{itemize}
+
+Join is a combination of selection and cross product.
+
+\[ R \bowtie S = \sigma_{condition} (R \times S) \]
+
+\section*{Relational Calculus}
+
+\begin{itemize}
+    \item First-order logic
+    \item Tuple relational calculus (TRC)
+    \item Domain relational calculus (DRC)
+\end{itemize}
+
+Each relational predicate P is:
+
+\begin{itemize}
+    \item Atom (Actor(x, y, z))
+    \item P $\land$ P (conjunction)
+    \item P $\lor$ P (disjunction)
+    \item P $\Rightarrow$ P (implication)
+    \item $\lnot$ P (negation)
+    \item $\forall$ x P (for all x P holds)
+    \item $\exists$ x P (for an x P holds)
+\end{itemize}
+
+\subsection*{Examples}
+
+Exists a schema:
+
+$Movie(\underline{mid},title,year,total-gross)$ \\
+$Actor(\underline{aid},name,b-year)$ \\
+$Plays(\underline{mid},\underline{aid})$
+
+Q: Actor who played only in movies produced in 1990
+
+$Result(x) = \forall{y}.Play(y, x) \Rightarrow \exists{z}\exists{t}.Movie(y, z, 1990,t)$
+
+\subsection*{Tuple Relational Calculus}
+
+Form: $\{T \mid p(T)\}$
+
+The result of this query is the set of all tuples $t$ for which the formula $p(T)$ evaluates to true with $T = t$.
+
+\subsection*{Domain Relational Calculus}
+
+Form: $\{<x_1,x_2,\dots,x_n> \mid p(<x_1,x_2,\dots,x_n>)\}$, 
+where each $x_i$ is either a domain variable or a constant
+and $p(<x_1, x_2,\dots,x_n>)$ denotes a \textbf{DRC formula}.
+
+\section*{Index}
+
+An \textbf{index} is a data structure that organizes data records on disk to optimize certain kinds of retrieval operations.
+
+We use the term \textbf{data entry} to refer to the records stored in an index file.
+
+There are three main alternatives for what to store as a data entry in an index:
+
+\begin{enumerate}
+    \item A data entry $k*$ is an actual data record (with searh key value $k$).
+    \item A data entry $<k, rid>$ pair, where $rid$ is the record id of a data record with search key value $k$.
+    \item A data entry $<k, red-list>$ pair, where $red-list$ is a list of record ids of data records with search key value $k$. 
+\end{enumerate}
+
+\begin{enumerate}
+    \item Hash-based Indexing
+    \item Tree-based Indexing
+\end{enumerate}
+
+clustered index:
+
+unclustered index:
+
+sop:
+
+\subsection*{JOIN Algorithms}
+
+
+
+\subsection*{TO TA}
+
+\begin{itemize}
+    \item why in 2 pass merge sort the number of M unit increases?
+    \item book 9.7 why to point free space there?
+\end{itemize}
+
+\subsection*{TODO}
+
+\begin{itemize}
+    \item fully understand pages, frames, and buffer pool
+\end{itemize}
+
+\end{document}
