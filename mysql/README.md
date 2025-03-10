@@ -100,6 +100,10 @@ We need a proper data structure for "binary search"
 
 ### Isolation levels in MySQL
 
+> https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
+
+The default isolation level for InnoDB is `REPEATABLE READ`
+
 | \  | Read Uncommitted | Read Commited | Repeatable Read | Serializable |
 | --------------------- | ------------ | --------------- | -------- | -- |
 | Dirty Read            | O | X | X | X |
